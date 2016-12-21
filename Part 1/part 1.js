@@ -17,15 +17,73 @@
 
 
 
+
+function makeFriend(name, age, education, nationality){
+	
+	var arrOfFriends = [];
+	return{
+		addFriend: function(name, age, education, nationality){
+			arrOfFriends.push({
+				name: name,
+				age: age,
+				education: education,
+				nationality: nationality
+			});
+		},
+		
+		showFriend: function(friend){
+			return friend.name + " with the age of " + friend.age + " and with " + friend.education + " education."
+		},
+
+		averageStudents: function(arrOfFriends){
+			var sum =0;
+			for (var i = 0; i < arrOfFriends.length; i++) {
+				sum+=arrOfFriends[i].age;
+			}
+			return sum/arrOfFriends.length;
+		}
+	}
+}
+
+
+
+var rowaida = makeFriend("Roqaya", 24, "English literature", "Syria");
+
+var roqaya = makeFriend("Roqaya", 24, "English literature", "Syria");
+
+
+
+
+
+
+
+
+
+
 /*
  b-create a function called rangeSquared in which it will accept two parameters, and will output the squared numbers between these two parameter if the number is even 
 	in order to square the numbers create a function called square and call it inside rangeSquared function
 	rangeSquared(2)// [4];
 	rangeSquared(3) // null
-	rangeSquared(2,10)// [4,16,12,16,100];
+	rangeSquared(2,10)// [4,16,36,64,100];
 */
 // write your code here ...
 
+function square(x){
+	return Math.pow(x,2);
+}
+
+function range(n,m){
+	var arr=[];
+	for (var i = n; i <= m; i++) {
+		arr.push(i);
+	}
+	return arr;
+}
+
+function rangeSquared(n,m){
+	return range(n,m).map(square);
+}
 
 
 
@@ -35,4 +93,20 @@
 */
 
 // write your code here ....
+
+function leader(arr){
+	var res = [];
+	for (var i = 0; i < arr.length; i++) {
+		var greater = true;
+		for (var j = i+1; j < arr.length; j++) {
+			if(arr[i]>arr[j])
+				greater = greater && true;
+			else
+				greater = greater && false;
+		}
+		if(greater)
+			res.push(arr[i]);
+	}
+	return res;
+}
 

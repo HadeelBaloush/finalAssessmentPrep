@@ -32,3 +32,63 @@
  */
 
 //writ your code here .....
+
+
+function Player(name){
+	var obj = {}
+	var arrayOfPlayers = [];
+
+	
+	obj.info = {name: name}
+	
+	
+
+	obj.addInfo = addInfo;
+	obj.increaseLevel = increaseLevel;
+	obj.isAvailable = isAvailable;
+	obj.addPlayer = addPlayer;
+	return obj;
+}
+
+function addInfo(age, position, level, availability){
+	this.info.age = age;
+	this.info.position = position;
+	this.info.level = level;
+	this.info.availability = availability;
+}
+
+function increaseLevel(n){
+	this.info.level += n;
+}
+
+function isAvailable(){
+	if(this.info.availability==="available")
+		return true;
+	else
+		return false;
+}
+
+function addPlayer(){
+	(this.arrayOfPlayers).push(this.info);
+}
+
+var player1 = Player("john");
+var player2 = Player("abo treka");
+var player3 = Player("messi");
+var player4 = Player("ronaldo");
+
+player1.addInfo(30, "defence", 2, "available");
+player2.addInfo(25, "hojoom", 1, "not available");
+player3.addInfo(19, "middle line", 0, "available");
+player4.addInfo(35, "7ares", 6, "available");
+
+///I know nothing about football :)
+
+player1.addPlayer();
+player2.addPlayer();
+player3.addPlayer();
+player4.addPlayer();
+
+// function decreaseLevelIfYoung(arrayOfPlayers){
+// 	this.arrayOfPlayers.forEach()
+// }
